@@ -149,7 +149,7 @@ function App() {
       </section>
       
       {/* Refund Policy Section */}
-      <section id="refund-policy" className="py-20">
+      <section id="refund" className="py-20">
         <RefundPolicy />
       </section>
       
