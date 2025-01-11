@@ -12,7 +12,7 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Format phone number for WhatsApp
-    const whatsappNumber = '776098948';
+    const whatsappNumber = '8217516064';
     const message = `Name: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AMessage: ${formData.message}`;
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
   };
@@ -88,15 +88,15 @@ const ContactForm = () => {
       <div className="mt-8 space-y-4">
         <div className="flex items-center">
           <Phone className="w-5 h-5 text-indigo-600 mr-2" />
-          <span>+94 776098948</span>
+          <span>+91 8217516064</span>
         </div>
         <div className="flex items-center">
           <Mail className="w-5 h-5 text-indigo-600 mr-2" />
-          <span>support@theaterbook.com</span>
+          <span>support@moontown.com</span>
         </div>
         <div className="flex items-center">
           <MapPin className="w-5 h-5 text-indigo-600 mr-2" />
-          <span>123 Theater Street, Colombo</span>
+          <span>opp. Sri jnanakshi vidyamandir, Janankshi Layout, 5th Stage, Rajarajeshwari Nagar, Bengaluru, Karnataka 560098</span>
         </div>
       </div>
     </div>
