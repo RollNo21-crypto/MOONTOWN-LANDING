@@ -10,6 +10,8 @@ import WhatsappChat from './components/WhatsappChat';
 import FAQs from './components/FAQs';
 import moonVideo from './assets/videos/134492-759734879_medium.mp4';
 import moonAltVideo from './assets/videos/celebration.mp4';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 import { Play, PartyPopper, Clapperboard } from 'lucide-react';
 
@@ -214,7 +216,7 @@ function App() {
       </section>
       
       {/* FAQs Section */}
-      <section id="faqs" className="py-10">
+      <section id="faqs" >
         <FAQs />
       </section>
 
