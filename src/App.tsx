@@ -5,6 +5,9 @@ import BookingModal from './components/BookingModal';
 import PricingDetails from './components/PricingDetails';
 import RefundPolicy from './components/RefundPolicy';
 import FAQs from './components/FAQs';
+import moonVideo from './assets/videos/134492-759734879_medium.mp4';
+import moonAltVideo from './assets/videos/168104-838533643_medium.mp4';
+
 import { Play, PartyPopper, Clapperboard } from 'lucide-react';
 
 function App() {
@@ -25,102 +28,163 @@ function App() {
       <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
 
       {/* Hero Section */}
-      <section id="home" className="pt-16">
-        <div className="relative h-[600px]">
-          <img
-            src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
-            alt="MoonTown Private Theatre"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <div className="text-center text-white">
-              <h1 className="text-5xl font-bold mb-4">Experience Cinema Like Never Before</h1>
-              <p className="text-xl mb-8">Book your private MoonTown Private Theatre experience today</p>
-              <div className="space-x-4">
+      <section id="home" className="relative w-full min-h-[98vh] overflow-hidden">
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 min-w-full min-h-full object-cover"
+        >
+          <source src={moonVideo} type="video/mp4" />
+          <source src={moonAltVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Overlay and Content */}
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center">
+          <div className="text-center text-white px-4">
+            <h1 className="text-5xl font-bold mb-4 sm:text-3xl animate-slide-down">
+              Experience Cinema Like Never Before
+            </h1>
+            <p className="text-xl mb-8 sm:text-lg animate-fade-in">
+              Book your private MoonTown Private Theatre experience today
+            </p>
+            <div className="space-x-4 animate-slide-up">
+              <button
+                onClick={() => setIsBookingModalOpen(true)}
+                className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition sm:px-6 sm:py-2 sm:text-sm"
+              >
+                Book Now
+              </button>
+              <button
+                onClick={() =>
+                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })
+                }
+                className="bg-white text-indigo-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition sm:px-6 sm:py-2 sm:text-sm"
+              >
+                Know More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Services Section */}
+        <section id="services" className="py-20 bg-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl font-extrabold text-center mb-16 text-gray-800 animate-fade-in">
+              Our Services
+            </h2>
+            <div className="grid md:grid-cols-3 gap-12">
+              {/* Card 1 */}
+              <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 animate-slide-up">
+                <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full mb-6 relative icon-container">
+                  <Play className="w-8 h-8 text-white fill-current icon" />
+                </div>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+                  Private MoonTown Private Theatre Booking
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Experience movies in your own private MoonTown Private Theatre with
+                  state-of-the-art sound and picture quality.
+                </p>
                 <button
                   onClick={() => setIsBookingModalOpen(true)}
-                  className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700"
+                  className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition"
                 >
-                  Book Now
+                  Book Now →
                 </button>
+              </div>
+
+              {/* Card 2 */}
+              <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 animate-slide-up">
+                <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-full mb-6 relative icon-container">
+                  <PartyPopper className="w-8 h-8 text-white fill-current icon" />
+                </div>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+                  Special Celebrations
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Make your special occasions memorable with custom decorations and
+                  themed setups.
+                </p>
                 <button
-                  onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-white text-indigo-600 px-8 py-3 rounded-lg hover:bg-gray-100"
+                  onClick={() => setIsBookingModalOpen(true)}
+                  className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition"
                 >
-                  Know More
+                  Plan Event →
+                </button>
+              </div>
+
+              {/* Card 3 */}
+              <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 animate-slide-up">
+                <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full mb-6 relative icon-container">
+                  <Clapperboard className="w-8 h-8 text-white fill-current icon" />
+                </div>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+                  Premium Experience
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Enjoy premium amenities including gourmet food, butler service, and
+                  luxury seating.
+                </p>
+                <button
+                  onClick={() => setIsBookingModalOpen(true)}
+                  className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition"
+                >
+                  Learn More →
                 </button>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-200">
-              <Play className="w-12 h-12 text-indigo-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Private MoonTown Private Theatre Booking</h3>
-              <p className="text-gray-600 mb-4">Experience movies in your own private MoonTown Private Theatre with state-of-the-art sound and picture quality.</p>
-              <button
-                onClick={() => setIsBookingModalOpen(true)}
-                className="text-indigo-600 hover:text-indigo-700"
-              >
-                Book Now →
-              </button>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-200">
-              <PartyPopper className="w-12 h-12 text-indigo-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Special Celebrations</h3>
-              <p className="text-gray-600 mb-4">Make your special occasions memorable with custom decorations and themed setups.</p>
-              <button
-                onClick={() => setIsBookingModalOpen(true)}
-                className="text-indigo-600 hover:text-indigo-700"
-              >
-                Plan Event →
-              </button>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-200">
-              <Clapperboard className="w-12 h-12 text-indigo-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Premium Experience</h3>
-              <p className="text-gray-600 mb-4">Enjoy premium amenities including gourmet food, butler service, and luxury seating.</p>
-              <button
-                onClick={() => setIsBookingModalOpen(true)}
-                className="text-indigo-600 hover:text-indigo-700"
-              >
-                Learn More →
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">About Us</h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
-              <p className="text-gray-600 mb-6">To provide an unparalleled cinema experience in a private, luxurious setting that exceeds our customers' expectations.</p>
-              <button className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700">
-                Learn More About Us
-              </button>
-            </div>
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                alt="About Us"
-                className="rounded-lg shadow-md"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+<section id="about" className="py-20 bg-gray-100">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-4xl font-extrabold text-center mb-16 animate-fade-in">
+      About Us
+    </h2>
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      {/* Left Content */}
+      <div className="animate-slide-right">
+        <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
+        <p className="text-gray-600 mb-6 leading-relaxed">
+          Our mission is to provide an unparalleled cinema experience in a
+          private, luxurious setting that exceeds our customers' expectations.
+          We strive to create an atmosphere where every movie night feels like
+          a special occasion.
+        </p>
+        <h3 className="text-2xl font-semibold mb-4">Our Vision</h3>
+        <p className="text-gray-600 mb-6 leading-relaxed">
+          We envision redefining entertainment by offering personalized,
+          high-quality cinematic experiences tailored to our customers’ needs.
+        </p>
+        <button className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">
+          Learn More About Us
+        </button>
+      </div>
+
+      {/* Right Content - Video */}
+      <div className="rounded-lg overflow-hidden shadow-md animate-slide-left">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src={moonAltVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Gallery Section */}
       <section id="gallery" className="py-20">
