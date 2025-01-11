@@ -4,9 +4,12 @@ import ContactForm from './components/ContactForm';
 import BookingModal from './components/BookingModal';
 import PricingDetails from './components/PricingDetails';
 import RefundPolicy from './components/RefundPolicy';
+import Gallery from './components/Gallery';
+import WhatsappChat from './components/WhatsappChat';
+// import BookingEngine from './components/BookingEngine';
 import FAQs from './components/FAQs';
 import moonVideo from './assets/videos/134492-759734879_medium.mp4';
-import moonAltVideo from './assets/videos/168104-838533643_medium.mp4';
+import moonAltVideo from './assets/videos/celebration.mp4';
 
 import { Play, PartyPopper, Clapperboard } from 'lucide-react';
 
@@ -73,7 +76,7 @@ function App() {
 
 
       {/* Services Section */}
-        <section id="services" className="py-20 bg-gray-100">
+        <section id="services" className="py-10 bg-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl font-extrabold text-center mb-16 text-gray-800 animate-fade-in">
               Our Services
@@ -143,7 +146,7 @@ function App() {
         </section>
 
       {/* About Section */}
-<section id="about" className="py-20 bg-gray-100">
+<section id="about" className="py-10 bg-gray-100">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 className="text-4xl font-extrabold text-center mb-16 animate-fade-in">
       About Us
@@ -187,44 +190,37 @@ function App() {
 
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Gallery</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryImages.map((image, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg">
-                <img
-                  src={`${image.url}?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80`}
-                  alt={image.title}
-                  className="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                  <p className="text-white text-lg font-semibold">{image.title}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+      <section id="gallery" >
+        <Gallery />
       </section>
 
+
     {/* Pricing Section */}
-      <section id="pricing" className="py-20">
+      <section id="pricing" >
         <PricingDetails />
       </section>
-      
+
+{/*  <section id="bookingeng" >
+        <BookingEngine />
+      </section> */}
+
+       <section id="whatsappchat" >
+        <WhatsappChat />
+      </section>
+
       {/* Refund Policy Section */}
-      <section id="refund" className="py-20">
+      <section id="refund" className=" bg-gray-100">
         <RefundPolicy />
       </section>
       
       {/* FAQs Section */}
-      <section id="faqs" className="py-20">
+      <section id="faqs" className="py-10">
         <FAQs />
       </section>
 
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-100">
+      <section id="contact" className="py-10 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2>
           <div className="grid md:grid-cols-2 gap-12">
