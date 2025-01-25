@@ -12,7 +12,7 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Format phone number for WhatsApp
-    const whatsappNumber = '8217516064';
+    const whatsappNumber = '';
     const message = `Name: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AMessage: ${formData.message}`;
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
   };
