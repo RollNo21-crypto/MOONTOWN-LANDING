@@ -10,10 +10,13 @@ import WhatsappChat from './components/WhatsappChat';
 import FAQs from './components/FAQs';
 import moonVideo from './assets/videos/134492-759734879_medium.mp4';
 import moonAltVideo from './assets/videos/celebration.mp4';
+import promo1 from './assets/videos/promo1.mp4';
+import promo2 from './assets/videos/promo2.mp4';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 import { Play, PartyPopper, Clapperboard } from 'lucide-react';
+import Aboutus from './components/Aboutus';
 
 function App() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -148,47 +151,111 @@ function App() {
         </section>
 
       {/* About Section */}
-<section id="about" className="py-10 bg-gray-100">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 className="text-4xl font-extrabold text-center mb-16 animate-fade-in">
-      About Us
-    </h2>
-    <div className="grid md:grid-cols-2 gap-12 items-center">
-      {/* Left Content */}
-      <div className="animate-slide-right">
-        <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
-        <p className="text-gray-600 mb-6 leading-relaxed">
-          Our mission is to provide an unparalleled cinema experience in a
-          private, luxurious setting that exceeds our customers' expectations.
-          We strive to create an atmosphere where every movie night feels like
-          a special occasion.
-        </p>
-        <h3 className="text-2xl font-semibold mb-4">Our Vision</h3>
-        <p className="text-gray-600 mb-6 leading-relaxed">
-          We envision redefining entertainment by offering personalized,
-          high-quality cinematic experiences tailored to our customers’ needs.
-        </p>
-        <button className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">
-          Learn More About Us
-        </button>
-      </div>
+      <section id="about" className="py-10 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-extrabold text-center mb-16 animate-fade-in">
+            About Us
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="animate-slide-right">
+              <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Our mission is to provide an unparalleled cinema experience in a
+                private, luxurious setting that exceeds our customers' expectations.
+                We strive to create an atmosphere where every movie night feels like
+                a special occasion.
+              </p>
+              <h3 className="text-2xl font-semibold mb-4">Our Vision</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                We envision redefining entertainment by offering personalized,
+                high-quality cinematic experiences tailored to our customers’ needs.
+              </p>
+              <button className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">
+                Learn More About Us
+              </button>
+            </div>
 
-      {/* Right Content - Video */}
-      <div className="rounded-lg overflow-hidden shadow-md animate-slide-left">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src={moonAltVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
-  </div>
-</section>
+            {/* Right Content - Main Video */}
+            <div className="rounded-lg overflow-hidden shadow-md animate-slide-left">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+                controls
+              >
+                <source src={moonAltVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          {/* As Seen on Media Section */}
+          <div className="mt-16">
+            <h3 className="text-4xl font-extrabold text-center mb-16 animate-fade-in">
+              As Seen on Media
+            </h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* First Media Video Card */}
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
+                <div className="relative">
+                  <video
+                    className="w-full h-full object-cover"
+                    controls
+                    muted
+                    preload="metadata"
+                  >
+                    <source src={promo1} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div className="p-4">
+                  <h4 className="text-xl font-semibold mb-2">
+                    Experience Our Premium Store
+                  </h4>
+                  <p className="text-gray-600">
+                    Take a tour of our state-of-the-art facilities designed to deliver
+                    the ultimate luxury and comfort. Witness the magic behind every
+                    cinematic moment.
+                  </p>
+                </div>
+              </div>
+
+              {/* Second Media Video Card */}
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
+                <div className="relative">
+                  <video
+                    className="w-full h-full object-cover"
+                    controls
+                    muted
+                    preload="metadata"
+                  >
+                    <source src={promo2} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div className="p-4">
+                  <h4 className="text-xl font-semibold mb-2">
+                    Behind the Scenes of Our Luxurious Setting
+                  </h4>
+                  <p className="text-gray-600">
+                    Discover how we bring a touch of elegance to every experience.
+                    From meticulous planning to flawless execution, see what goes
+                    into creating unforgettable moments.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+{/* <section id="aboutus" >
+        <Aboutus/>
+      </section> */}
+
 
 
       {/* Gallery Section */}
