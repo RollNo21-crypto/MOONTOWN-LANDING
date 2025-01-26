@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import moonTownLogo from './logo.png';
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,9 +40,13 @@ const Navbar = () => {
     <nav className="fixed top-0 w-full bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <span className="text-xl font-bold text-indigo-600">Moon Town</span>
-          </div>
+        <div className="flex items-center">
+        <img
+          src={moonTownLogo}
+          alt="Moon Town Logo"
+          className="h-12 w-auto"
+        />
+      </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
